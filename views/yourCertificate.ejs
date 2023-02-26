@@ -1,0 +1,34 @@
+<%- include('partials/header.ejs') %>
+
+<body>
+        <div id="certificate">
+            <h1 class="company"><%= organization %></h1>
+            <h1>CERTIFICATE OF INTERNSHIP</h1>
+            <p>This Certificate is presented to</p>
+            <h1><%= name %></h1>
+            <p>for successful completion of the <span style="font-weight: bold; font-size: 20px;"><%= role %></span> <br>Internship Training program from <%= startDate %> to <%= endDate %>.</p>
+            <div class="organiser">
+                <h3><%= organizer %></h3>
+                <p>Organiser</p>
+            </div>
+            <img class="qrcode" src="<%= qrCodeImageUrl %>" alt="QR Code">
+        </div>
+        <button id="download" onclick="downloadCertificate()"><i class="fa-solid fa-file-arrow-down"></i></button>
+
+        <script src="https://kit.fontawesome.com/f729ac2968.js" crossorigin="anonymous"></script>
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+        <script>
+        function downloadCertificate() {
+            html2canvas(document.querySelector("#certificate")).then(canvas => {
+            // Convert canvas to image and trigger download
+            var link = document.createElement("a");
+            document.body.appendChild(link);
+            link.download = "certificate.png";
+            link.href = canvas.toDataURL();
+            link.target = '_blank';
+            link.click();
+            });
+        }
+        </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<%- include('partials/header.ejs') %>
+
+<body>
+    <div class="sheet">
+        <h1>Certificate Number</h1>
+        <h1 style="letter-spacing: 5px;"><%= Cnumber %></h1>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><%= Cname %></td>
+            </tr>
+            <tr>
+                <td>Role</td>
+                <td><%= Crole %></td>
+            </tr>
+            <tr>
+                <td>Organization</td>
+                <td><%= Corganization %></td>
+            </tr>
+            <tr>
+                <td>Organizer</td>
+                <td><%= Corganizer %></td>
+            </tr>
+            <tr>
+                <td>Start Date</td>
+                <td><%= CstartDate %></td>
+            </tr>
+            <tr>
+                <td>End Date</td>
+                <td><%= CendDate %></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+<style>
+    body{
+        font-family: 'Montserrat', sans-serif;
+        color: white;
+        letter-spacing: 1px;
+    }
+    
+    .sheet{
+        background: linear-gradient(to right, #00dba1, #ff8f15);
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        height: 93vh;
+    }
+
+    table{
+        border-spacing: 50px 0px;
+    }
+
+    td{
+        padding: 10px;
+    }
+</style>
+
+</html>

@@ -1,0 +1,135 @@
+/* ////////////////////////  CREATE CERTIFICATE //////////////////////////////// */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+form{
+    width: 40%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    padding: 10px;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* overflow: scroll; */
+}
+
+.createHeading{
+    text-align: center;
+    margin: 20px;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    height: 90vh;
+    width: 35%;
+    color: #00dba1;
+}
+
+input{
+    padding: 5px;
+    width: 60%;
+    font-size: 15px;
+}
+
+.preview{
+    width: 40%;
+    margin: 15px;
+    padding: 10px;
+    background-color: #ff8f15;
+    color: white;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border: 1px solid #fff;
+    box-shadow: 0px 0px 2px;
+}
+.createCerti:hover{
+    opacity: 0.9;
+}
+
+.kartexaLogo{
+    height: 50px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+@media (max-width: 660px) {
+    form {
+      position: inherit;
+      text-align: center;
+      /* height: auto; */
+      width: 100%;
+      margin: 0px;
+    }
+    .createHeading{
+        display: inherit;
+        width: 100%;
+        text-align: center;
+        height: auto;
+    }
+  }
+
+
+/* ////////////////////////////  YOUR CERTIFICATE  ///////////////////////////////////////////// */
+#certificate{
+    text-align: center;
+    border: 5px solid black;
+    /* padding: 40px 15px; */
+    padding: 30px;
+    /* margin: 10px; */
+    width: 708px;
+    height: 452px;
+    background-image: url('pngtree-simple-elegant-blue-gold-certificate-border-design-png-image_6015461.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    letter-spacing: 2px;
+    line-height: 1.7;
+}
+
+.organiser{
+    position: relative;
+    margin-top: 110px;
+    margin-right: 360px;
+    line-height: normal;
+}
+
+.company{
+    font-family: 'Alex Brush', cursive;
+    font-size: 60px;
+}
+
+#download{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: 0px;
+    border-radius: 100px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 45px;
+
+}
+#download:hover{
+    opacity: 0.8;
+}
+
+.qrcode{
+    float: right;
+    margin-right: 147px;
+    margin-top: -124px;
+    width: 130px;
+}
+
+a{
+    text-decoration: none;
+    
+}
+/* ////////////////////////////////////////////////////////////////////////////////// */

@@ -1,0 +1,37 @@
+<%- include('partials/header.ejs') %>
+
+  <body>
+    
+      <h1 class="createHeading">CREATE A CERTIFICATE</h1>
+      <form action="/" method="post" enctype="multipart/form-data" >
+        <input type="number" placeholder="Certificate Number" name="certificateNumber" minlength="7" required />
+        <input type="text" placeholder="Name" name="name" required />
+        <input type="text" placeholder="Role" name="role" required />
+        <input type="text" placeholder="Organization" name="organization" required />
+        <input type="text" placeholder="Internship Organizer" name="organizer" required />
+        
+        <input
+          type="text"
+          placeholder="Start Date"
+          onfocus="this.type='Date'"
+          name="startDate"
+          required
+        />
+        <input
+          type="text"
+          placeholder="End date"
+          onfocus="this.type='Date' "
+          name="endDate"
+          required
+        />
+        <p>Profile Picture</p>
+        <input type="file" name="profilePicture" required>
+        <button class="preview" type="submit" value="upload">Preview</button>
+
+        <img class="kartexaLogo" src="Transparent 512.png" alt="Kartexa">
+
+      </form>
+      
+    
+  </body>
+</html>
