@@ -6,7 +6,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-form{
+.createCertiForm{
     width: 40%;
     height: 100vh;
     display: flex;
@@ -81,28 +81,25 @@ input{
 #certificate{
     text-align: center;
     border: 5px solid black;
-    /* padding: 40px 15px; */
     padding: 30px;
-    /* margin: 10px; */
-    width: 708px;
-    height: 452px;
-    background-image: url('pngtree-simple-elegant-blue-gold-certificate-border-design-png-image_6015461.png');
+    width: 600px;
+    height: 450px;
+    background-image: url('Free\ Graduation\ Certificate\ Template\ _\ Template_net.png');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     letter-spacing: 2px;
-    line-height: 1.7;
 }
 
 .organiser{
     position: relative;
-    margin-top: 110px;
-    margin-right: 360px;
+    margin-top: 60px;
+    margin-right: 300px;
     line-height: normal;
 }
 
 .company{
-    font-family: 'Alex Brush', cursive;
-    font-size: 60px;
+    text-align: left;
+    font-weight: bolder;
 }
 
 #download{
@@ -115,6 +112,7 @@ input{
     text-align: center;
     cursor: pointer;
     font-size: 45px;
+    background-color: lightgrey;
 
 }
 #download:hover{
@@ -123,13 +121,32 @@ input{
 
 .qrcode{
     float: right;
-    margin-right: 147px;
-    margin-top: -124px;
-    width: 130px;
+    margin-right: 100px;
+    margin-top: -80px;
+    width: 80px;
+    letter-spacing: normal;
+    font-size: 8px;
+    font-weight: bold;
 }
 
 a{
     text-decoration: none;
     
+}
+hr{
+    background-color: goldenrod;
+    width: 80%;
+    margin: 0px 0px 20px 55px;
+    padding-top: 2px;
+    border: 0px;
+}
+.certificateLogo{
+    height: 50px;
+    position: fixed;
+    top: 40px;
+    left: 40px;
+}
+.digitalSignature{
+    width: 80px;
 }
 /* ////////////////////////////////////////////////////////////////////////////////// */

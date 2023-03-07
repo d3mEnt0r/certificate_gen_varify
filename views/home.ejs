@@ -1,0 +1,45 @@
+<%- include('partials/header.ejs') %>
+
+<body>
+    <div class="home">
+        <div><a href="/create"><button style="background-color: #ff8f15;"><h2>CREATE</h2></button></a></div>
+        <div>
+            <form action="/" method="post">
+                <input style="margin-bottom: 10px;" type="number" name="certificateNumber" placeholder="Enter Certificate No." required>
+                <button type="submit" style="background-color: #00dba1;"><h2>VERIFY</h2></button>
+            </form>
+        </div>        
+    </div>   
+</body>
+<style>
+    *{
+        margin: 0%;
+        padding: 0;
+    }
+    .home{
+        height: 100vh;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    button{
+        padding: 15px;
+        color: white;
+        border: 1px solid #fff;
+        cursor: pointer;
+        border: 1px solid #fff;
+        box-shadow: 0px 0px 2px;
+        letter-spacing: 2px;
+    }
+    button:hover{
+        opacity: 0.8;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+    }
+</style>
+</html>

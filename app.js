@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const multer = require('multer');
 const path = require('path');
 const qr = require('qrcode');
-const puppeteer = require('puppeteer');
 
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -65,7 +64,7 @@ let User = mongoose.model('certificate', userSchema);
 
 
 //////////////////  CREATE CERTIFICATE  ////////////////////////////////////////////////////////////////
-app.post('/', upload.single('profilePicture'), (req, res) => {
+app.post('/create', upload.single('profilePicture'), (req, res) => {
   let certificateNumber = req.body.certificateNumber;
   let name = req.body.name;
   let role = req.body.role;
@@ -100,28 +99,12 @@ app.post('/', upload.single('profilePicture'), (req, res) => {
           console.log(err);
           res.status(500).send('Error generating QR code!');
         } else {
-          // Redirect to the certificate page with the necessary data
-          res.redirect('/yourCertificate?'+ 'certificateNumber=' + certificateNumber + '&name=' + name + '&role=' + role + '&organization=' + organization + '&organizer=' + organizer + '&startDate=' + startDate + '&endDate=' + endDate + '&qrCodeImageUrl=' + encodeURIComponent(dataUrl));
+          res.render("yourCertificate.ejs", {qrCodeImageUrl: dataUrl, certificateNumber: certificateNumber, name: name, role: role, organization: organization, organizer: organizer, startDate: startDate, endDate: endDate});
         }
       });
     }
   });
 });
-
-app.get("/yourCertificate" ,function(req, res){
-  let certificateNumber = req.query.certificateNumber;
-  let name = req.query.name;
-  let role = req.query.role;
-  let organization = req.query.organization;
-  let organizer = req.query.organizer;
-  let startDate = req.query.startDate;
-  let endDate = req.query.endDate;
-  let qrCodeImageUrl = decodeURIComponent(req.query.qrCodeImageUrl);
-
-  res.render("yourCertificate.ejs", {qrCodeImageUrl: qrCodeImageUrl, certificateNumber: certificateNumber, name: name, role: role, organization: organization, organizer: organizer, startDate: startDate, endDate: endDate});
-});
-///////////////////////////////////////////////////////////////////////////////////
-
 
 
 
@@ -156,17 +139,28 @@ app.get("/studentCertificate/:Cnum", function(req, res) {
         Corganization: user.organization,
         Corganizer: user.organizer,
         CstartDate: formattedStartDate,
-        CendDate: formattedEndDate
+        CendDate: formattedEndDate,
+        imgSrc: user.profilePicture
       });
     }
   });
 });
 ///////////////////////////////////////////////////////////////////////////////////
 
-app.get("/", function(req, res){
+app.post("/", function(req, res){
+  let verifyNumber = req.body.certificateNumber;
+  let verifyUrl = 'http://localhost:3000/studentCertificate/' + verifyNumber;
+  res.redirect(verifyUrl);
+});
+
+app.get("/create", function(req, res){
   res.render("createCerti.ejs");
 });
-///////////////////  lISTEN/////////////////////////////////////////////////////////
+
+app.get("/", function(req, res){
+  res.render("home.ejs");
+})
+
 app.listen(3000, function(){
     console.log("Server is up and running!");
 });

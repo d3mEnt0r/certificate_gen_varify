@@ -2,16 +2,22 @@
 
 <body>
         <div id="certificate">
-            <h1 class="company"><%= organization %></h1>
-            <h1>CERTIFICATE OF INTERNSHIP</h1>
+            <img class="certificateLogo" src="Text Logo.png" alt="Kartexa">
+            <h1 style="margin-top: 30px;">CERTIFICATE</h1>
+            <h2 style="margin-bottom: 30px;">OF INTERNSHIP</h2>
             <p>This Certificate is presented to</p>
-            <h1><%= name %></h1>
-            <p>for successful completion of the <span style="font-weight: bold; font-size: 20px;"><%= role %></span> <br>Internship Training program from <%= startDate %> to <%= endDate %>.</p>
+            <h1 style="margin-top: 20px; font-family: 'Alex Brush', cursive; letter-spacing: 4px;"><%= name %></h1>
+            <hr>
+            <p>for successful completion of the <span style="font-weight: bold; font-size: 20px;"><%= role %></span> <br>Internship from <%= startDate %> to <%= endDate %>.</p>
             <div class="organiser">
-                <h3><%= organizer %></h3>
-                <p>Organiser</p>
+                <img class="digitalSignature" src="png_20230227_173304_0000-removebg-preview.png" alt="">
+                <h4>PRASEN JEET</h4>
+                <p style="font-size: 12px;">CEO, Kertexa</p>
             </div>
-            <img class="qrcode" src="<%= qrCodeImageUrl %>" alt="QR Code">
+            <div class="qrcode">
+                <img style="width: 80px;" src="<%= qrCodeImageUrl %>" alt="QR Code">
+                <p>*Scan QR to verify</p>
+            </div>
         </div>
         <button id="download" onclick="downloadCertificate()"><i class="fa-solid fa-file-arrow-down"></i></button>
 
